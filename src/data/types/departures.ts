@@ -4,5 +4,5 @@ type Departure = {
   trainDestination: string;
   stationName: string;
   departureTime: Date;
-  delay: number;
+  delay: number | null;
 };

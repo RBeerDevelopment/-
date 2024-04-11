@@ -11,7 +11,7 @@ export const departureSchema = z.object({
       }),
       when: z.string(),
       plannedWhen: z.string(),
-      delay: z.number(),
+      delay: z.number().nullable(),
       platform: z.string().nullable(),
       plannedPlatform: z.string().nullable(),
       direction: z.string(),
@@ -30,7 +30,7 @@ export const departureSchema = z.object({
       }),
     })
   ),
-  realtimeDataUpdatedAt: z.number().nullable(),
+  realtimeDataUpdatedAt: z.number().nullable().optional(),
 });
 
 export type DepartureResponse = z.infer<typeof departureSchema>;
