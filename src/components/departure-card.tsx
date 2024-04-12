@@ -37,7 +37,9 @@ export function DepartureCard(props: Props): React.ReactElement {
                   : ""
               }`}
             >
-              {departure.delay ? `${departure.delay / 60}min` : ""}
+              {departure.delay
+                ? `${departure.delay > 0 ?? "+"}${departure.delay / 60}min`
+                : ""}
             </p>
           </div>
         </div>
